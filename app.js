@@ -53,10 +53,10 @@ function removeNotes(title) {
         }
     });
     if (repeat === true) {
-        var List = notes.filter((note) => {
+        var notelist = notes.filter((note) => {
             return note.title.toLowerCase() != title.toLowerCase();
         });
-        fs.writeFile('notes.json', JSON.stringify(List), () => {
+        fs.writeFile('notes.json', JSON.stringify(notelist), () => {
             console.log(chalk.redBright.bold(title + ' note removed succesfully!'));
 
         })
